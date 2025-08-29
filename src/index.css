@@ -15,54 +15,54 @@
     --popover: 0 0% 100%;
     --popover-foreground: 25 15% 15%;
 
-    /* Sophisticated rose-gold primary */
-    --primary: 340 55% 55%;
+    /* Premium dark green primary */
+    --primary: 158 45% 35%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 340 45% 75%;
+    --primary-glow: 158 35% 55%;
 
     /* Gender-specific color schemes */
-    --women-primary: 340 55% 55%;
-    --women-accent: 15 45% 88%;
-    --women-glow: 340 45% 75%;
+    --women-primary: 158 45% 40%;
+    --women-accent: 158 25% 88%;
+    --women-glow: 158 35% 60%;
     
-    --men-primary: 210 50% 45%;
-    --men-accent: 210 25% 85%;
-    --men-glow: 210 40% 70%;
+    --men-primary: 158 50% 30%;
+    --men-accent: 158 20% 85%;
+    --men-glow: 158 40% 50%;
 
     /* Warm secondary tones */
     --secondary: 25 25% 92%;
     --secondary-foreground: 25 15% 25%;
 
     /* Elegant muted tones */
-    --muted: 30 15% 94%;
-    --muted-foreground: 25 10% 45%;
+    --muted: 158 8% 94%;
+    --muted-foreground: 158 6% 45%;
 
     /* Soft accent */
-    --accent: 15 45% 88%;
-    --accent-foreground: 25 20% 20%;
+    --accent: 158 25% 88%;
+    --accent-foreground: 158 15% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 25 15% 88%;
-    --input: 25 15% 90%;
-    --ring: 340 55% 55%;
+    --border: 158 12% 88%;
+    --input: 158 10% 90%;
+    --ring: 158 45% 35%;
 
     --radius: 0.75rem;
 
-    /* Fashion gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(340 55% 55%), hsl(15 65% 65%), hsl(45 70% 75%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(25 15% 97%));
-    --gradient-accent: linear-gradient(135deg, hsl(340 35% 92%), hsl(25 25% 95%));
+    /* Premium green gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(158 45% 35%), hsl(158 35% 45%), hsl(158 25% 55%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(158 8% 97%));
+    --gradient-accent: linear-gradient(135deg, hsl(158 25% 92%), hsl(158 20% 95%));
     
     /* Gender-specific gradients */
-    --gradient-women: linear-gradient(135deg, hsl(340 55% 55%), hsl(15 65% 65%), hsl(45 70% 75%));
-    --gradient-men: linear-gradient(135deg, hsl(210 50% 45%), hsl(220 45% 55%), hsl(240 40% 65%));
+    --gradient-women: linear-gradient(135deg, hsl(158 45% 40%), hsl(158 35% 50%), hsl(158 25% 60%));
+    --gradient-men: linear-gradient(135deg, hsl(158 50% 30%), hsl(158 40% 40%), hsl(158 30% 50%));
 
     /* Elegant shadows */
-    --shadow-elegant: 0 10px 40px -10px hsl(340 55% 55% / 0.15);
-    --shadow-soft: 0 4px 20px -4px hsl(25 15% 15% / 0.1);
-    --shadow-glow: 0 0 30px hsl(340 45% 75% / 0.3);
+    --shadow-elegant: 0 10px 40px -10px hsl(158 45% 35% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(158 8% 15% / 0.1);
+    --shadow-glow: 0 0 30px hsl(158 35% 55% / 0.3);
 
     /* Smooth transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -86,33 +86,33 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 158 25% 8%;
+    --foreground: 158 5% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 158 25% 8%;
+    --card-foreground: 158 5% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 158 25% 8%;
+    --popover-foreground: 158 5% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 158 35% 55%;
+    --primary-foreground: 158 25% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 158 15% 15%;
+    --secondary-foreground: 158 5% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 158 15% 15%;
+    --muted-foreground: 158 8% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 158 15% 15%;
+    --accent-foreground: 158 5% 95%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 158 5% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 158 15% 15%;
+    --input: 158 15% 15%;
+    --ring: 158 35% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
