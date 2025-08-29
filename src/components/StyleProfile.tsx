@@ -30,6 +30,7 @@ export const StyleProfile: React.FC<StyleProfileProps> = ({ onBack }) => {
   const [selectedColors, setSelectedColors] = useState<string>('');
   const [bodyType, setBodyType] = useState<string>('');
   const [lifestyle, setLifestyle] = useState<string[]>([]);
+  const [gender, setGender] = useState<string>('');
   const [currentStep, setCurrentStep] = useState(1);
 
   const toggleStyle = (styleId: string) => {
@@ -49,7 +50,7 @@ export const StyleProfile: React.FC<StyleProfileProps> = ({ onBack }) => {
   };
 
   const nextStep = () => {
-    if (currentStep < 4) setCurrentStep(currentStep + 1);
+    if (currentStep < 5) setCurrentStep(currentStep + 1);
   };
 
   const prevStep = () => {
@@ -67,7 +68,7 @@ export const StyleProfile: React.FC<StyleProfileProps> = ({ onBack }) => {
             </Button>
             <div>
               <h1 className="text-2xl font-bold text-foreground">Style Profile</h1>
-              <p className="text-sm text-muted-foreground">Step {currentStep} of 4</p>
+              <p className="text-sm text-muted-foreground">Step {currentStep} of 5</p>
             </div>
           </div>
           <Badge variant="secondary" className="px-4 py-2">
@@ -81,15 +82,15 @@ export const StyleProfile: React.FC<StyleProfileProps> = ({ onBack }) => {
         {/* Progress Bar */}
         <div className="mb-12">
           <div className="flex items-center justify-between mb-2">
-            {[1, 2, 3, 4].map((step) => (
+            {[1, 2, 3, 4, 5].map((step) => (
               <div key={step} className="flex items-center">
                 <div className={`h-8 w-8 rounded-full flex items-center justify-center text-sm font-semibold ${
                   step <= currentStep ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'
                 }`}>
                   {step}
                 </div>
-                {step < 4 && (
-                  <div className={`h-1 w-16 mx-2 ${
+                {step < 5 && (
+                  <div className={`h-1 w-12 mx-1 ${
                     step < currentStep ? 'bg-primary' : 'bg-muted'
                   }`} />
                 )}
@@ -101,8 +102,60 @@ export const StyleProfile: React.FC<StyleProfileProps> = ({ onBack }) => {
           </div>
         </div>
 
-        {/* Step 1: Style Preferences */}
+        {/* Step 1: Gender Selection */}
         {currentStep === 1 && (
+          <Card className={`border-0 shadow-soft ${gender === 'women' ? 'bg-gradient-women' : gender === 'men' ? 'bg-gradient-men' : 'bg-gradient-card'}`}>
+            <CardHeader className="text-center">
+              <CardTitle className="flex items-center justify-center space-x-2">
+                <User className="h-6 w-6 text-primary" />
+                <span className={gender ? (gender === 'women' ? 'text-white' : 'text-white') : 'text-foreground'}>Choose Your Style</span>
+              </CardTitle>
+              <CardDescription className={gender ? (gender === 'women' ? 'text-white/80' : 'text-white/80') : 'text-muted-foreground'}>
+                Select the style category that best represents you
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card
+                  className={`cursor-pointer transition-all duration-300 ${
+                    gender === 'women'
+                      ? 'bg-white/20 text-white shadow-glow border-white/30'
+                      : 'bg-background hover:shadow-soft'
+                  }`}
+                  onClick={() => setGender('women')}
+                >
+                  <CardContent className="p-8 text-center space-y-4">
+                    <div className="h-16 w-16 rounded-full bg-gradient-women flex items-center justify-center mx-auto">
+                      <Heart className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Women's Style</h3>
+                    <p className="text-sm opacity-80">Elegant, sophisticated, and feminine fashion</p>
+                  </CardContent>
+                </Card>
+                
+                <Card
+                  className={`cursor-pointer transition-all duration-300 ${
+                    gender === 'men'
+                      ? 'bg-white/20 text-white shadow-glow border-white/30'
+                      : 'bg-background hover:shadow-soft'
+                  }`}
+                  onClick={() => setGender('men')}
+                >
+                  <CardContent className="p-8 text-center space-y-4">
+                    <div className="h-16 w-16 rounded-full bg-gradient-men flex items-center justify-center mx-auto">
+                      <Star className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Men's Style</h3>
+                    <p className="text-sm opacity-80">Classic, modern, and refined menswear</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Step 2: Style Preferences */}
+        {currentStep === 2 && (
           <Card className="bg-gradient-card border-0 shadow-soft">
             <CardHeader className="text-center">
               <CardTitle className="flex items-center justify-center space-x-2">
@@ -136,8 +189,8 @@ export const StyleProfile: React.FC<StyleProfileProps> = ({ onBack }) => {
           </Card>
         )}
 
-        {/* Step 2: Color Preferences */}
-        {currentStep === 2 && (
+        {/* Step 3: Color Preferences */}
+        {currentStep === 3 && (
           <Card className="bg-gradient-card border-0 shadow-soft">
             <CardHeader className="text-center">
               <CardTitle className="flex items-center justify-center space-x-2">
@@ -180,8 +233,8 @@ export const StyleProfile: React.FC<StyleProfileProps> = ({ onBack }) => {
           </Card>
         )}
 
-        {/* Step 3: Body Type */}
-        {currentStep === 3 && (
+        {/* Step 4: Body Type */}
+        {currentStep === 4 && (
           <Card className="bg-gradient-card border-0 shadow-soft">
             <CardHeader className="text-center">
               <CardTitle>Body Type & Fit Preferences</CardTitle>
@@ -211,8 +264,8 @@ export const StyleProfile: React.FC<StyleProfileProps> = ({ onBack }) => {
           </Card>
         )}
 
-        {/* Step 4: Lifestyle */}
-        {currentStep === 4 && (
+        {/* Step 5: Lifestyle */}
+        {currentStep === 5 && (
           <Card className="bg-gradient-card border-0 shadow-soft">
             <CardHeader className="text-center">
               <CardTitle className="flex items-center justify-center space-x-2">
@@ -268,10 +321,11 @@ export const StyleProfile: React.FC<StyleProfileProps> = ({ onBack }) => {
           
           <Button
             variant="hero"
-            onClick={currentStep === 4 ? onBack : nextStep}
+            onClick={currentStep === 5 ? onBack : nextStep}
             className="flex items-center space-x-2"
+            disabled={currentStep === 1 && !gender}
           >
-            <span>{currentStep === 4 ? 'Complete Profile' : 'Next'}</span>
+            <span>{currentStep === 5 ? 'Complete Profile' : 'Next'}</span>
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>

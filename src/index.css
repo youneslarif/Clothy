@@ -20,6 +20,15 @@
     --primary-foreground: 0 0% 98%;
     --primary-glow: 340 45% 75%;
 
+    /* Gender-specific color schemes */
+    --women-primary: 340 55% 55%;
+    --women-accent: 15 45% 88%;
+    --women-glow: 340 45% 75%;
+    
+    --men-primary: 210 50% 45%;
+    --men-accent: 210 25% 85%;
+    --men-glow: 210 40% 70%;
+
     /* Warm secondary tones */
     --secondary: 25 25% 92%;
     --secondary-foreground: 25 15% 25%;
@@ -45,6 +54,10 @@
     --gradient-hero: linear-gradient(135deg, hsl(340 55% 55%), hsl(15 65% 65%), hsl(45 70% 75%));
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(25 15% 97%));
     --gradient-accent: linear-gradient(135deg, hsl(340 35% 92%), hsl(25 25% 95%));
+    
+    /* Gender-specific gradients */
+    --gradient-women: linear-gradient(135deg, hsl(340 55% 55%), hsl(15 65% 65%), hsl(45 70% 75%));
+    --gradient-men: linear-gradient(135deg, hsl(210 50% 45%), hsl(220 45% 55%), hsl(240 40% 65%));
 
     /* Elegant shadows */
     --shadow-elegant: 0 10px 40px -10px hsl(340 55% 55% / 0.15);
